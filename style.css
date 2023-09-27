@@ -1,0 +1,164 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  --primary-clr: hsl(25, 97%, 53%);
+
+  --neutral-100: hsl(0, 0%, 100%);
+
+  --bg-clr: hsl(216, 12%, 8%);
+  --bg-clr-card: hsl(213, 19%, 18%);
+
+  --text-clr-1: hsl(217, 12%, 63%);
+  --text-clr-2: hsl(216, 12%, 54%);
+  --hover-clr: hsl(216, 12%, 54%);
+
+  --fw-bold: 700;
+  --fw-regular: 400;
+
+  --radius: 14px;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  background-color: var(--bg-clr);
+  font-family: "Overpass", sans-serif;
+  height: 100vh;
+}
+main {
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+  margin-left: -20rem;
+}
+
+/* disable back card */
+.hidden {
+  display: none;
+}
+
+.cards {
+  position: relative;
+}
+
+.card {
+  background-color: var(--bg-clr-card);
+  color: var(--text-clr-1);
+  width: 370px;
+  height: 380px;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  /* margin: 2rem auto; */
+}
+.card-front .card-title {
+  color: var(--neutral-100);
+  font-weight: var(--fw-bold);
+  margin-top: 1.5rem;
+}
+.card-front .star-icon {
+  /* center svg */
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: hsl(214, 20%, 23%);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.card-front p {
+  margin-top: 1rem;
+}
+
+.rating-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+.rate {
+  background-color: hsl(214, 20%, 23%);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+
+  /* center text */
+  display: grid;
+  place-items: center;
+}
+.rate:hover {
+  background-color: var(--hover-clr);
+  color: var(--neutral-100);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: var(--primary-clr);
+  border: none;
+  outline: none;
+  color: var(--neutral-100);
+  border-radius: 24px;
+  font-weight: var(--fw-regular);
+  cursor: pointer;
+}
+.btn:focus {
+  background-color: var(--neutral-100);
+  color: var(--primary-clr);
+}
+
+/* 
+===========
+CARD BACK STYLES: 
+===========
+*/
+
+.card-back {
+  text-align: center;
+  padding: 2rem;
+}
+.card-back p {
+  margin-top: 1rem;
+}
+
+.card-back h2 {
+  margin-top: 1rem;
+  color: var(--neutral-100);
+}
+
+#show--rate {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: hsl(214, 20%, 23%);
+  padding: 0.3em 0.5em;
+  border-radius: var(--radius);
+  color: var(--primary-clr);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card-front {
+  z-index: 2;
+}
+.card-back {
+  z-index: 1;
+}
